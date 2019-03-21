@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+	<struts>
+		<package name="staff" namespace="/" extends="common">
+			<action name="staffAction_*" class="com.tcxpz.crm.staff.web.action.StaffAction" method="{1}">
+				<!-- 1 登录成功 -->
+			<result name="success" type="redirectAction">staffAction_home</result>
+			<!-- 2 没有登录成功，需要登录,在struts.xml中配置 -->
+			<!-- <result name="login">/WEB-INF/pages/login.jsp</result> -->
+			<!-- 3 首页 -->
+			<result name="home">/WEB-INF/pages/frame.jsp</result>
+			<!-- 查询所有的员工 -->
+			<result name="findAllStaff">/WEB-INF/pages/staff/listStaff.jsp</result>
+			</action>
+		</package>
+	</struts>
